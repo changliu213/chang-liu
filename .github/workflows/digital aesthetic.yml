@@ -1,0 +1,47 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+function Ball(x,y){
+  
+  this.position = {x: x,y: y};
+  
+  this.draw = function(){
+    this.position.x++;
+    this.position.y++;
+    ellipse(this.position.x,this.position.y,10,10);
+  }
+}
+
+var balls=[];
+
+function mouseDragged(){
+var ball = new Ball(mouseX,mouseY);
+balls.push(ball);
+}
+
+function draw(){
+  background(255);
+  for(var i = 0; i< balls.length;i++){
+  balls[i].draw();
+  }
+}
+
+function setup(){
+  fill(255,153,153);
+  noStroke(0);
+  resizeCanvas(500,500);
+}
